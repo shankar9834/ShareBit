@@ -23,7 +23,7 @@ router.post('/register',catchAsync(async(req,res,next)=>{
        // const user=new User({email,username});
        
        //edited-->start
-       res.send(req.body);
+      // res.send(req.body);
        const user=new User({email,username,mobile_num,room_num,hostel_num});
        //edited-->end
         
