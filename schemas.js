@@ -21,3 +21,13 @@ module.exports.reviewSchema=Joi.object({
   }).required()
 
 })
+
+module.exports.itemSchema=Joi.object({
+     item:Joi.object(
+       {
+         Item_name:Joi.string().required(),
+         category:Joi.string().required()
+       }
+     ).required()
+
+})
