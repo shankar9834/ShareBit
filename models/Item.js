@@ -9,6 +9,10 @@ const itemSchema=new Schema(
             required:true,
             unique:true
         },
+        images:[{
+            url:String,
+            filename:String
+        }],
         category:{
             type:String,
             required:true

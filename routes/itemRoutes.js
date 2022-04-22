@@ -14,8 +14,12 @@ const upload = multer({storage});
 
 router.get('/',(req,res)=>{
 
-      res.render('campgrounds/items.ejs');
+      res.send('ok');
     
 })
 
+
+router.post('/',(req,res)=>{
+    res.render('campgrounds/new.ejs');
+})
 module.exports=router;

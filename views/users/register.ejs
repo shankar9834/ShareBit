@@ -1,43 +1,53 @@
+
+
+
+
+
 <%- layout('layouts/Boilerplate') %> 
 <h2>Register</h2>
 <form action="/register" method="POST" class="validated-form" novalidate>
+
+  <div class="personal_data">
     <div class="mb-3">
         <label class=" form-label" for="username">Username</label>
-        <input class="form-control" type="text"  id="username" name="username" required>
+        <input class="form-control" style="width:300px;" type="text"  id="username" name="username" required>
         <div class="valid-feedback">
          Looks good!
        </div>
 
        <div class="mb-3">
         <label class=" form-label" for="email">Email</label>
-        <input class="form-control" type="email"  id="email" name="email" required>
+        <input class="form-control" style="width:300px;" type="email"  id="email" name="email" required>
         <div class="valid-feedback">
          Looks good!
        </div>
        <div class="mb-3">
-        <label class=" form-label" for="password">Password</label>
-        <input class="form-control" type="password"  id="password" name="password" required>
+        <label class=" form-label" for="Phone Number">Phone Number</label>
+        <input class="form-control" style="width:300px;"  type="Phone Number"  id="Phone Number" name="Phone Number" required>
         <div class="valid-feedback">
          Looks good!
        </div>
        <div class="mb-3">
-        <label class=" form-label" for="mobile_num">Mobile Number</label>
-        <input class="form-control" type="text"  id="mobile_num" name="mobile_num" required>
+        <label class=" form-label" for="Room Number">Room Number</label>
+        <input class="form-control" style="width:300px;" type="Room Number"  id="Room Number" name="Room_Number" required>
         <div class="valid-feedback">
          Looks good!
        </div>
        <div class="mb-3">
-        <label class=" form-label" for="room_num">Room Number</label>
-        <input class="form-control" type="text"  id="room_num" name="room_num" required>
+        <label class=" form-label" for="Room Number">Hostel Number</label>
+        <input class="form-control" style="width:300px;" type="Hostel Number"  id="Hostel Number" name="Hostel_Number" required>
         <div class="valid-feedback">
          Looks good!
        </div>
-       <div class="mb-3">
-        <label class=" form-label" for="hostel_num">Hostel Number</label>
-        <input class="form-control" type="text"  id="hostel_num" name="hostel_num" required>
-        <div class="valid-feedback">
-         Looks good!
-       </div>
+      </div>
 
+
+     
+              
+
+
+              
+    
+           
    <button class="btn btn-success mt-3">Register</button>
 </form>

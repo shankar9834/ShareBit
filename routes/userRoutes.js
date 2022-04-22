@@ -9,7 +9,11 @@ router.get('/register',(req,res)=>{
 })
 
 router.post('/register',catchAsync(async(req,res,next)=>{
-   
+      
+
+
+      //   res.send(req.body);
+
     try{
        // const {email,username,password}=req.body;
        
@@ -42,11 +46,14 @@ router.post('/register',catchAsync(async(req,res,next)=>{
            })
        
     }
+
     catch(e)
     {          console.log(e.message);
              req.flash('error',e.message);
              res.redirect('/register');
     }
+
+    
 }))
 
 router.get('/login',(req,res)=>{
