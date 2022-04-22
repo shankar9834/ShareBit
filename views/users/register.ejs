@@ -1,38 +1,51 @@
 <%- layout('layouts/Boilerplate') %> 
-<h2>Register</h2>
+<h2 style="text-align:center;">Register</h2>
 <form action="/register" method="POST" class="validated-form" novalidate>
 
   <div class="personal_data">
-    <div class="mb-3">
+    <div class="mb-3" style="margin-left:400px;padding-top: 20px; padding-top:10px;" >
         <label class=" form-label" for="username">Username</label>
-        <input class="form-control" style="width:300px;" type="text"  id="username" name="username" required>
-        <div class="valid-feedback">
-         Looks good!
-       </div>
-
-       <div class="mb-3">
-        <label class=" form-label" for="email">Email</label>
-        <input class="form-control" style="width:300px;" type="email"  id="email" name="email" required>
-        <div class="valid-feedback">
-         Looks good!
-       </div>
-       <div class="mb-3">
-        <label class=" form-label" for="Phone Number">Phone Number</label>
-        <input class="form-control" style="width:300px;"  type="Phone Number"  id="Phone Number" name="Phone Number" required>
-        <div class="valid-feedback">
-         Looks good!
-       </div>
-       <div class="mb-3">
-        <label class=" form-label" for="Room Number">Room Number</label>
-        <input class="form-control" style="width:300px;" type="Room Number"  id="Room Number" name="Room Number" required>
+        <input class="form-control" style="width:500px;" type="text"  id="username" name="username" required>
         <div class="valid-feedback">
          Looks good!
        </div>
       </div>
 
+       <div class="mb-3" style="margin-left:400px;padding-top: 20px; padding-top:10px;">
+        <label class=" form-label" for="email">Email</label>
+        <input class="form-control" style="width:500px;" type="email"  id="email" name="email" required>
+        <div class="valid-feedback">
+         Looks good!
+       </div>
+      </div>
+
+       <div class="mb-3"  style="margin-left:400px;padding-top: 20px; padding-top:10px;">
+        <label class=" form-label" for="Phone Number">Phone Number</label>
+        <input class="form-control" style="width:500px;"  type="Phone Number"  id="Phone Number" name="Phone Number" required>
+        <div class="valid-feedback">
+         Looks good!
+       </div>
+      </div>
+
+       <div class="mb-3"  style="margin-left:400px;padding-top: 20px; padding-top:10px;">
+        <label class=" form-label" for="Room Number">Room Number</label>
+        <input class="form-control" style="width:500px;" type="Room Number"  id="Room Number" name="Room Number" required>
+        <div class="valid-feedback">
+         Looks good!
+       </div>
+      </div>
+
+       <div class="mb-3"  style="margin-left:400px;padding-top: 20px; padding-top:10px;">
+        <label class=" form-label" for="Hostel Number">Hostel Number</label>
+        <input class="form-control" style="width:500px;"  type="Hostel Number"  id="Hostel Number" name="Hostel Number" required>
+        <div class="valid-feedback">
+         Looks good!
+       </div>
+      </div>
+    </div>
 
       <div class="medicine">
-        <div class="mb-3">
+        <div class="mb-4">
  
             <label class=" form-label" for="medicine">Medicine</label><br>
              <input type="checkbox" id="Cold" name="Cold" value="Cold">
@@ -59,9 +72,10 @@
              <label for="Burn"> Burn</label><br>
 
            </div>
+          </div>
 
            <div class="electronic">
-            <div class="mb-3">
+            <div class="mb-4">
      
                 <label class=" form-label" for="electronic">Electronic</label><br>
                  <input type="checkbox" id="" name="Kettle" value="Kettle">
@@ -88,6 +102,7 @@
                  <label for="Burn"> Burn</label><br>
     
                </div>
+              </div>
 
 
               
