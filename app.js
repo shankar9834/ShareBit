@@ -35,8 +35,15 @@ const LocalStategy=require('passport-local');
 
 const User=require('./models/user');
 //added while routing
-const campgroundRoutes=require('./routes/campgroundRoutes');
-const reviewRoutes=require('./routes/reviewRoutes');
+
+ 
+//const campgroundRoutes=require('./routes/campgroundRoutes');
+
+//edited-->start
+const itemRoutes=require('./routes/itemRoutes');
+
+//edited-->end
+//const reviewRoutes=require('./routes/reviewRoutes');
 const userRoutes=require('./routes/userRoutes');
 
 
@@ -124,8 +131,13 @@ app.get("/", (req, res) => {
 
 
 app.use('/',userRoutes);
-app.use('/campgrounds',campgroundRoutes);
-app.use('/campgrounds/:id',reviewRoutes);
+//edited-->start
+  app.use('/items',itemRoutes);
+
+//edited-->end
+
+//app.use('/campgrounds',campgroundRoutes);
+//app.use('/campgrounds/:id',reviewRoutes);
 
 
 app.all('*', ( req, res, next) => {
