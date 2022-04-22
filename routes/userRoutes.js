@@ -11,12 +11,24 @@ router.get('/register',(req,res)=>{
 router.post('/register',catchAsync(async(req,res,next)=>{
    
     try{
-        const {email,username,password}=req.body;
-        
-        //creating new user
-        const user=new User({email,username});
+       // const {email,username,password}=req.body;
        
-        //registering user
+       
+       // edited-->start
+       const {email,username,password,mobile_num,room_num,hostel_num}=req.body;
+       
+       //edited-->end
+
+        //creating new user
+       // const user=new User({email,username});
+       
+       //edited-->start
+       res.send(req.body);
+       const user=new User({email,username,mobile_num,room_num,hostel_num});
+       //edited-->end
+        
+       
+       //registering user
         const registeredUser=await User.register(user,password);
        
         // logging in the registered user 

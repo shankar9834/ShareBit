@@ -14,8 +14,18 @@ const ExpressError=require('./utils/ExpressError.js');
 const {campgroundSchema,reviewSchema}=require('./schemas.js');
 const Review=require('./models/review');
 
- // const DB_URL=process.env.DB_URL || "mongodb://localhost:27017/yelp-camp";
- const DB_URL="mongodb://localhost:27017/ShareBit";
+// edited-->start
+const Item=require('./models/Item');
+
+//edited -->end
+
+
+// const DB_URL=process.env.DB_URL || "mongodb://localhost:27017/yelp-camp";
+ 
+//edited-->start
+const DB_URL="mongodb://localhost:27017/ShareBit";
+
+// edited-->end
 
 const session=require('express-session');
 const flash=require('connect-flash');
@@ -28,6 +38,8 @@ const User=require('./models/user');
 const campgroundRoutes=require('./routes/campgroundRoutes');
 const reviewRoutes=require('./routes/reviewRoutes');
 const userRoutes=require('./routes/userRoutes');
+
+
 
 const MongoDBStore = require("connect-mongodb-session")(session);
 

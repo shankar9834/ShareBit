@@ -2,10 +2,11 @@ const mongoose=require('mongoose');
 const passportLocalMongoose=require('passport-local-mongoose');
 const Schema=mongoose.Schema;
 
+
 /* const userSchema=new Schema({
     email:{
         type:String,
-        required:true,s
+        required:true,
         unique:true
     }
 }); */
@@ -18,7 +19,7 @@ const userSchema=new Schema({
         required:true,
         unique:true
     },
- /*    mobile_num:{
+    mobile_num:{
         type:String,
         required:true,
         unique:true
@@ -28,20 +29,20 @@ const userSchema=new Schema({
     },
     hostel_number:{
         type:Number
-    },
+    }
    
-   products:[
+  /*  Items:[
         {
            type: Schema.Types.ObjectId,
-           ref:'Product'
+           ref:'Item'
 
         }
-           ] */
+           ]  */
     
 
 });
 
-//end
+// edited-->end
 
 userSchema.plugin(passportLocalMongoose);
 
