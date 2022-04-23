@@ -24,13 +24,12 @@ const userSchema=new Schema({
         required:true,
         unique:true
     },
-    room_number:{
-        type:Number,
-    },
-    hostel_number:{
-        type:Number
-    }
+  
    
+
+    
+
+});
   /*  Items:[
         {
            type: Schema.Types.ObjectId,
@@ -38,10 +37,17 @@ const userSchema=new Schema({
 
         }
            ]  */
-    
 
-});
-
+    /*  room_number:{
+        type:Number,
+        required:true,
+        unique:false
+    },
+    hostel_number:{
+        type:Number,
+        required:true,
+        unique:false
+    } */       
 // edited-->end
 
 userSchema.plugin(passportLocalMongoose);

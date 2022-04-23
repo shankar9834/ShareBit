@@ -128,15 +128,15 @@ app.use((req,res,next)=>{
 app.get("/", (req, res) => {
   res.render("home");
 });
-
-
 app.use('/',userRoutes);
+app.use('/items',itemRoutes);
+
+ 
 //edited-->start
-  app.use('/items',itemRoutes);
 
 //edited-->end
 
-//app.use('/campgrounds',campgroundRoutes);
+// app.use('/campgrounds',campgroundRoutes);
 //app.use('/campgrounds/:id',reviewRoutes);
 
 

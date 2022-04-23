@@ -12,24 +12,22 @@ router.post('/register',catchAsync(async(req,res,next)=>{
       
 
 
-      //   res.send(req.body);
+       // res.send(req.body);
 
     try{
        // const {email,username,password}=req.body;
        
-       
-       // edited-->start
-       const {email,username,password,mobile_num,room_num,hostel_num}=req.body;
-       
-       //edited-->end
-
-        //creating new user
-       // const user=new User({email,username});
-       
-       //edited-->start
       // res.send(req.body);
-       const user=new User({email,username,mobile_num,room_num,hostel_num});
-       //edited-->end
+       // edited-->start
+       const {email,username,password,mobile_num}=req.body;
+       
+      // const {mobile_num,room_num,hostel_num}=req.body;
+     // console.log("mob : ",room_num);
+      
+      const user=new User({email,username,mobile_num});
+     // const user=new User(req.body);
+      
+      //edited-->end
         
        
        //registering user
@@ -42,7 +40,7 @@ router.post('/register',catchAsync(async(req,res,next)=>{
                 return next(err);
             }
             req.flash('success','Welcome to Yelp Camp!')
-            res.redirect('/campgrounds');
+            res.redirect('/');
            })
        
     }
@@ -53,16 +51,16 @@ router.post('/register',catchAsync(async(req,res,next)=>{
              res.redirect('/register');
     }
 
-    
+
 }))
 
 router.get('/login',(req,res)=>{
    res.render('users/login');
 })
 
-router.post('/login',passport.authenticate('local',{failureFlash:true,failureRedirect:'/login'}),(req,res)=>{
-
-    req.flash('success','Welcome back!');
+/* router.post('/login',(req,res)=>{
+  
+    res.send('hitting login round');
    
     //returning user to the page where user requesting
     const redirectUrl=req.session.returnTo || '/campgrounds';
@@ -70,12 +68,23 @@ router.post('/login',passport.authenticate('local',{failureFlash:true,failureRed
     delete req.session.returnTo;
     res.redirect(redirectUrl);
 })
+ */
+ router.post('/login',passport.authenticate('local',{failureFlash:true,failureRedirect:'/login'}),(req,res)=>{
+  
+    req.flash('success','Welcome back!');
+   
+    //returning user to the page where user requesting
+    const redirectUrl=req.session.returnTo || '/';
+   
+    delete req.session.returnTo;
+    res.redirect(redirectUrl);
+}) 
 
 router.get('/logout',(req,res)=>{
     req.logOut();
    
     req.flash('success','Goodbye!');
-    res.redirect('/campgrounds');
+    res.redirect('/');
 })
 
 module.exports=router;
