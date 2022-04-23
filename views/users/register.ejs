@@ -1,4 +1,16 @@
 <%- layout('layouts/Boilerplate') %> 
+
+<style>
+  body {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("https://t3.ftcdn.net/jpg/03/79/57/92/240_F_379579202_Zd1PRVRMBtz7hhq5TBWjeOkArjHRxZOM.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+}
+</style>
+
 <h2 style="text-align:center;">Register</h2>
 <form action="/register" method="POST" class="validated-form" novalidate>
 
@@ -19,6 +31,14 @@
        </div>
       </div>
 
+      <div class="mb-3"  style="margin-left:400px;padding-top: 20px; padding-top:10px;">
+        <label class=" form-label" for="Password">Password</label>
+        <input class="form-control" style="width:500px;"  type="Hostel Number"  id="Hostel Number" name="Hostel Number" required>
+        <div class="valid-feedback">
+         Looks good!
+       </div>
+      </div>
+
        <div class="mb-3"  style="margin-left:400px;padding-top: 20px; padding-top:10px;">
         <label class=" form-label" for="Phone Number">Phone Number</label>
         <input class="form-control" style="width:500px;"  type="Phone Number"  id="Phone Number" name="Phone Number" required>
@@ -27,17 +47,17 @@
        </div>
       </div>
 
-       <div class="mb-3"  style="margin-left:400px;padding-top: 20px; padding-top:10px;">
-        <label class=" form-label" for="Room Number">Room Number</label>
-        <input class="form-control" style="width:500px;" type="Room Number"  id="Room Number" name="Room Number" required>
+      <div class="mb-3"  style="margin-left:400px;padding-top: 20px; padding-top:10px;">
+        <label class=" form-label" for="Hostel Number">Hostel Number</label>
+        <input class="form-control" style="width:500px;"  type="Hostel Number"  id="Hostel Number" name="Hostel Number" required>
         <div class="valid-feedback">
          Looks good!
        </div>
       </div>
 
        <div class="mb-3"  style="margin-left:400px;padding-top: 20px; padding-top:10px;">
-        <label class=" form-label" for="Hostel Number">Hostel Number</label>
-        <input class="form-control" style="width:500px;"  type="Hostel Number"  id="Hostel Number" name="Hostel Number" required>
+        <label class=" form-label" for="Room Number">Room Number</label>
+        <input class="form-control" style="width:500px;" type="Room Number"  id="Room Number" name="Room Number" required>
         <div class="valid-feedback">
          Looks good!
        </div>
