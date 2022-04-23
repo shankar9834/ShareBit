@@ -22,14 +22,11 @@
                 <nav class="nav nav-masthead justify-content-center float-md-right">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
 
-                  
+                   
                     <% if(!currentUser) { %>
-                      
-                      <a class="nav-link" href="/login">Sign In</a>
-                      
-                      <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link" href="/login">Sign In</a>
+                    <a class="nav-link" href="/register">Register</a>
                     <% } else { %>
-                      <a class="nav-link" href="/items/new">Add Item</a>
                     <a class="nav-link" href="/logout">Logout</a>
                     <% } %>
                 </nav>
@@ -78,7 +75,7 @@
                
                 <h5 class="card-title"style = "text-shadow: none;">Medicine</h5>
                 <p class="card-text"style = "text-shadow: none;" >Medicine for Cold, Cough, Acidity, etc.</p>
-                <a href="items/medicine" class="btn btn-primary">Go</a>
+                <a href="items/medicine.ejs" class="btn btn-primary">Go</a>
               </div>
             </div>   
   
@@ -88,11 +85,7 @@
                 <div class="text" style="padding-bottom: 70px;"></div>
                 <h5 class="card-title" style = "text-shadow: none;">General Stuff</h5>
                 <p class="card-text" style = "text-shadow: none;">Badminton Racket, Shuttle Cock, Bicycle, etc.</p>
-<<<<<<< HEAD
                 <a href="items/general_stuff" class="btn btn-primary">Go</a>
-=======
-                <a href="items/generalStuff" class="btn btn-primary">Go</a>
->>>>>>> 675188a41e69bb9c5c157593fd7a5347abdea16d
               </div>
             </div>   
   

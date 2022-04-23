@@ -1,18 +1,21 @@
 const mongoose=require('mongoose');
+const User=require('./user');
 const Schema=mongoose.Schema;
 
 
 const itemSchema=new Schema(
     {
-        Item_name:{
+        item_name:{
             type:String,
-            required:true,
-            unique:true
+            required:true
+            
         },
+       
         category:{
             type:String,
             required:true
         },
+        
         owner:{
             type:Schema.Types.ObjectId,
             ref:'User'
@@ -22,5 +25,10 @@ const itemSchema=new Schema(
     }
 );
 
-
+/*
+ images:[{
+            url:String,
+            filename:String
+        }],
+*/
 module.exports=mongoose.model('Item',itemSchema);

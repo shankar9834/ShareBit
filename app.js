@@ -56,6 +56,7 @@ const app = express();
 
 //
 //DB_URL
+//edited
 mongoose
   .connect(DB_URL)
   .then(() => {
@@ -113,12 +114,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use((req,res,next)=>{
    
-  //printing object req 
-  // start 
-  /* console.log("printing req object")
-  console.log(req);
-  */
-//end
+ 
   res.locals.currentUser=req.user;
   res.locals.success=req.flash('success');
   res.locals.error=req.flash('error');
@@ -128,15 +124,12 @@ app.use((req,res,next)=>{
 app.get("/", (req, res) => {
   res.render("home");
 });
-
-
 app.use('/',userRoutes);
-//edited-->start
-  app.use('/items',itemRoutes);
+app.use('/items',itemRoutes);
 
-//edited-->end
+ 
 
-//app.use('/campgrounds',campgroundRoutes);
+
 //app.use('/campgrounds/:id',reviewRoutes);
 
 
