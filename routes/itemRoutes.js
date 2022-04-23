@@ -33,46 +33,11 @@ const ExpressError=require('../utils/ExpressError.js');
 
 router.get('/new',async(req,res)=>{
 
-<<<<<<< HEAD
-router.get('/',(req,res)=>{
-
-      res.render('items/new.ejs');
-=======
     res.render('items/new.ejs');
->>>>>>> 675188a41e69bb9c5c157593fd7a5347abdea16d
     
 })
 
 
-<<<<<<< HEAD
-
-router.get('/medicine',(req,res)=>{
-
-      res.render('items/medicine.ejs');
-    
-})
-
-
-router.get('/electronic',(req,res)=>{
-
-      res.render('items/electronic.ejs');
-    
-})
-
-router.get('/study',(req,res)=>{
-
-      res.render('items/study.ejs');
-    
-})
-
-router.get('/general_stuff',(req,res)=>{
-
-      res.render('items/general_stuff.ejs');
-    
-})
-
-
-=======
 router.get('/electronic',async(req,res)=>{
  
   res.render('items/electronic.ejs');
@@ -130,5 +95,4 @@ router.get('/medicine/catalog/:id',async(req,res)=>{
 
 
 
->>>>>>> 675188a41e69bb9c5c157593fd7a5347abdea16d
 module.exports=router;
