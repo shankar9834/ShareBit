@@ -5,7 +5,7 @@ const Schema=mongoose.Schema;
 
 const itemSchema=new Schema(
     {
-        Item_name:{
+        item_name:{
             type:String,
             required:true
             

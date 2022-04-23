@@ -22,7 +22,7 @@ const User=require('../models/user');
 const catchAsync=require('../utils/catchAsync');
 const passport=require('passport');
 const Item=require('../models/Item');
-const {itemSchema}=require('../schemas.js');
+// const {itemSchema}=require('../schemas.js');
 const {storage}=require('../cloudinary');
 const multer  = require('multer');
 const {isLoggedIn,isAuthor}=require('../middleware');
@@ -31,17 +31,27 @@ const upload = multer({storage});
 const ExpressError=require('../utils/ExpressError.js');
 
 
-router.get('/',async(req,res)=>{
+router.get('/new',async(req,res)=>{
 
     res.render('items/new.ejs');
     
 })
+
+router.get('/electronic',async(req,res)=>{
+  res.render('items/electronic.ejs');
+})
+
+router.get('/generalStuff',async(req,res)=>{
+  res.render('items/generalStuff.ejs');
+  
+})
+  
 router.post('/',isLoggedIn, catchAsync(async(req,res)=>{
   // res.send(req.body.Item);
    // console.log("here", req.body);
    // res.send(req.body);
-   
-  const item = new Item(req.body.item);
+   const {item_name, category}=req.body.item;
+  const item = new Item({item_name,category});
    item.owner=req.user._id;
 
   // console.log(req);
@@ -54,8 +64,8 @@ router.post('/',isLoggedIn, catchAsync(async(req,res)=>{
 }))
 
 
-router.get('/medicines',async(req,res)=>{
-    res.render('items/medicines.ejs');
+router.get('/medicine',async(req,res)=>{
+    res.render('items/medicine.ejs');
   // res.send('hello from medicines');
 })
 
