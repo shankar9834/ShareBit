@@ -23,11 +23,11 @@ const catchAsync=require('../utils/catchAsync');
 const passport=require('passport');
 const Item=require('../models/Item');
 // const {itemSchema}=require('../schemas.js');
-const {storage}=require('../cloudinary');
-const multer  = require('multer');
+
+
 const {isLoggedIn,isAuthor}=require('../middleware');
 const methodOverride = require("method-override");
-const upload = multer({storage});
+
 const ExpressError=require('../utils/ExpressError.js');
 
 
@@ -54,12 +54,13 @@ router.get('/generalStuff',async(req,res)=>{
 router.get('/studyMaterial',async(req,res)=>{
 
   res.render('items/studyMaterial.ejs');
+
 })
 
 router.get('/medicine',async(req,res)=>{
 
   res.render('items/medicine.ejs');
-// res.send('hello from medicines');
+
 
 })
 
@@ -85,13 +86,7 @@ router.post('/',isLoggedIn, catchAsync(async(req,res)=>{
 router.get('/medicine/catalog/:id',async(req,res)=>{
   
   const {id}=req.params;
-   //res.send('hi from catalog');
-  // const foundItem=await Item.find({item_name:'cold'}).populate('owner');
- 
- //dummy data
-  // const foundItem=await Item.find({item_name:'water'}).populate('owner');
-   // console.log(foundItem);
-   const foundItem=await Item.find({item_name:id}).populate('owner');
+  const foundItem=await Item.find({item_name:id}).populate('owner');
    
   res.render('items/catalog.ejs',{foundItem});
 
@@ -103,24 +98,13 @@ router.get('/medicine/catalog/:id',async(req,res)=>{
 router.get('/electronic/catalog/:id',async(req,res)=>{
   
  
-  const {id}=req.params;
- // res.send(id);
-  //console.log(id);
-  //res.send('hi from catalog');
-  // const foundItem=await Item.find({item_name:'cold'}).populate('owner');
- 
- //dummy data
-  // const foundItem=await Item.find({item_name:'water'}).populate('owner');
-   // console.log(foundItem);
+   const {id}=req.params;
    const foundItem=await Item.find({item_name:id}).populate('owner');
    
-  res.render('items/catalog.ejs',{foundItem});
+   res.render('items/catalog.ejs',{foundItem});
 
 
 })
-
-
-
 
 
 
