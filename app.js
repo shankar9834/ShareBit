@@ -114,12 +114,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use((req,res,next)=>{
    
-  //printing object req 
-  // start 
-  /* console.log("printing req object")
-  console.log(req);
-  */
-//end
+ 
   res.locals.currentUser=req.user;
   res.locals.success=req.flash('success');
   res.locals.error=req.flash('error');
@@ -133,11 +128,8 @@ app.use('/',userRoutes);
 app.use('/items',itemRoutes);
 
  
-//edited-->start
 
-//edited-->end
 
-// app.use('/campgrounds',campgroundRoutes);
 //app.use('/campgrounds/:id',reviewRoutes);
 
 

@@ -37,36 +37,59 @@ router.get('/new',async(req,res)=>{
     
 })
 
+
 router.get('/electronic',async(req,res)=>{
+ 
   res.render('items/electronic.ejs');
+
 })
 
+
 router.get('/generalStuff',async(req,res)=>{
+
   res.render('items/generalStuff.ejs');
   
 })
-  
+
+
 router.post('/',isLoggedIn, catchAsync(async(req,res)=>{
-  // res.send(req.body.Item);
-   // console.log("here", req.body);
-   // res.send(req.body);
-   const {item_name, category}=req.body.item;
-  const item = new Item({item_name,category});
-   item.owner=req.user._id;
-
-  // console.log(req);
  
-   await item.save();
-   req.flash('success','Successfully made a new item');
-   res.redirect(`/items/${item._id}`);
-
-   res.redirect('/');
+      const {item_name, category}=req.body.item;
+      const item = new Item({item_name,category});
+      item.owner=req.user._id;
+      await item.save();
+     
+   
+      req.flash('success','Successfully made a new item');
+      // res.redirect(`/items/${item._id}`);
+      res.redirect('/');
+  
 }))
 
 
 router.get('/medicine',async(req,res)=>{
+
     res.render('items/medicine.ejs');
   // res.send('hello from medicines');
+
+})
+
+
+
+router.get('/medicine/catalog/:id',async(req,res)=>{
+  
+  const {id}=req.params;
+   //res.send('hi from catalog');
+  // const foundItem=await Item.find({item_name:'cold'}).populate('owner');
+ 
+ //dummy data
+  // const foundItem=await Item.find({item_name:'water'}).populate('owner');
+   // console.log(foundItem);
+   const foundItem=await Item.find({item_name:id}).populate('owner');
+   
+  res.render('items/catalog.ejs',{foundItem});
+
+
 })
 
 
