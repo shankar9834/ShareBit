@@ -22,7 +22,7 @@ module.exports.reviewSchema=Joi.object({
 
 })
 
-module.exports.itemSchema=Joi.object({
+/* module.exports.itemSchema=Joi.object({
      item:Joi.object(
        {
          Item_name:Joi.string().required(),
@@ -30,4 +30,4 @@ module.exports.itemSchema=Joi.object({
        }
      ).required()
 
-})
+}) */
