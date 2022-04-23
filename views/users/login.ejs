@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<%- layout('layouts/Boilerplate') %>
-=======
 <%- layout('layouts/Boilerplate') %> 
 <style>
   body {
@@ -12,7 +9,6 @@
     background-position: center;
 }
 </style>
->>>>>>> 82740058c369d28ebe01cbe61910652c347f9796
 
 <form action="/login" method="POST" class="validated-form" novalidate>
   <!-- <div class="mb-3">
@@ -32,7 +28,7 @@
           <div
             class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start"
           >
-            <h2 class="lead fw-normal mb-0 me-3" style="font-size: 40px ;">
+            <h2 class="lead fw-normal mb-0 me-3" style="font-size: 40px ; color:white;">
               Sign in
             </h2>
           </div>
@@ -46,7 +42,7 @@
             <label
               class="form-label"
               for="form3Example3"
-              style="margin-left: 0px; font-size: 25px"
+              style="margin-left: 0px; font-size: 25px; color:white;"
               >Email address</label
             >
             <input
@@ -57,7 +53,7 @@
             />
 
             <div class="mb-3" style="padding-top: 30px" ;>
-              <label class="form-label" for="password" style="font-size: 25px"
+              <label class="form-label" for="password" style="font-size: 25px;color:white;"
                 >Password</label
               >
               <input
@@ -67,7 +63,7 @@
                 name="password"
                 required
               />
-              <div class="valid-feedback">Looks good!</div>
+              <div class="valid-feedback" style="color:white;" >Looks good!</div>
 
               <div class="form-notch">
                 <div class="form-notch-leading" style="width: 9px"></div>
@@ -78,7 +74,7 @@
 
             <!-- Checkbox -->
             <div class="form-check mb-0">
-              <button class="btn btn-success mt-3">Login</button>
+              <button class="btn btn-success mt-3" style="color:white;">Login</button>
             </div>
           </div>
 
@@ -89,13 +85,13 @@
             <button
               type="button"
               class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem"
+              style="padding-left: 2.5rem; padding-right: 2.5rem; color:white;"
             >
               Login
             </button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">
+            <p class="small fw-bold mt-2 pt-1 mb-0,color:white;">
               Don't have an account?
-              <a href="/register" class="link-danger">Register</a>
+              <a href="/register" class="link-danger" style="color:white;">Register</a>
             </p>
           </div>
         </div>

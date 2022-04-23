@@ -27,5 +27,23 @@ router.get('/medicine',(req,res)=>{
 })
 
 
+router.get('/electronic',(req,res)=>{
+
+      res.render('items/electronic.ejs');
+    
+})
+
+router.get('/study',(req,res)=>{
+
+      res.render('items/study.ejs');
+    
+})
+
+router.get('/general_stuff',(req,res)=>{
+
+      res.render('items/general_stuff.ejs');
+    
+})
+
 
 module.exports=router;
