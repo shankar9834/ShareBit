@@ -74,7 +74,8 @@ router.get('/login',(req,res)=>{
     req.flash('success','Welcome back!');
    
     //returning user to the page where user requesting
-    const redirectUrl=req.session.returnTo || '/';
+   // const redirectUrl=req.session.returnTo || '/';
+    const redirectUrl='/';
    
     delete req.session.returnTo;
     res.redirect(redirectUrl);

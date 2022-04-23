@@ -51,6 +51,17 @@ router.get('/generalStuff',async(req,res)=>{
   
 })
 
+router.get('/studyMaterial',async(req,res)=>{
+
+  res.render('items/studyMaterial.ejs');
+})
+
+router.get('/medicine',async(req,res)=>{
+
+  res.render('items/medicine.ejs');
+// res.send('hello from medicines');
+
+})
 
 router.post('/',isLoggedIn, catchAsync(async(req,res)=>{
  
@@ -62,17 +73,12 @@ router.post('/',isLoggedIn, catchAsync(async(req,res)=>{
    
       req.flash('success','Successfully made a new item');
       // res.redirect(`/items/${item._id}`);
-      res.redirect('/');
+      res.redirect('/items/medicine');
   
 }))
 
 
-router.get('/medicine',async(req,res)=>{
 
-    res.render('items/medicine.ejs');
-  // res.send('hello from medicines');
-
-})
 
 
 
@@ -91,6 +97,29 @@ router.get('/medicine/catalog/:id',async(req,res)=>{
 
 
 })
+
+
+
+router.get('/electronic/catalog/:id',async(req,res)=>{
+  
+ 
+  const {id}=req.params;
+ // res.send(id);
+  //console.log(id);
+  //res.send('hi from catalog');
+  // const foundItem=await Item.find({item_name:'cold'}).populate('owner');
+ 
+ //dummy data
+  // const foundItem=await Item.find({item_name:'water'}).populate('owner');
+   // console.log(foundItem);
+   const foundItem=await Item.find({item_name:id}).populate('owner');
+   
+  res.render('items/catalog.ejs',{foundItem});
+
+
+})
+
+
 
 
 
