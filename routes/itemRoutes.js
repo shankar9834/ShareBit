@@ -14,8 +14,18 @@ const upload = multer({storage});
 
 router.get('/',(req,res)=>{
 
-      res.render('campgrounds/items.ejs');
+      res.render('items/new.ejs');
     
 })
+
+
+
+router.get('/medicine',(req,res)=>{
+
+      res.render('items/medicine.ejs');
+    
+})
+
+
 
 module.exports=router;
